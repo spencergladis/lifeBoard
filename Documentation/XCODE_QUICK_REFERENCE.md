@@ -3,12 +3,12 @@
 ## ✅ Files Recreated
 
 I've recreated all the missing tvOS app files:
-- `LifeBoard/LifeBoardApp.swift` - Main app entry point
-- `LifeBoard/Platform/Authentication/SignInView.swift` - Sign in screen
-- `LifeBoard/UserProfile/Widgets/DashboardView.swift` - Main dashboard
-- `LifeBoard/UserProfile/Widgets/WidgetGrid.swift` - Widget grid layout
-- `LifeBoard/UserProfile/Widgets/WidgetView.swift` - Individual widget wrapper
-- `LifeBoard/Navigation/NavigationCoordinator.swift` - Navigation manager
+- `lifeBoard/LifeBoardApp.swift` - Main app entry point
+- `lifeBoard/Platform/Authentication/SignInView.swift` - Sign in screen
+- `lifeBoard/UserProfile/Widgets/DashboardView.swift` - Main dashboard
+- `lifeBoard/UserProfile/Widgets/WidgetGrid.swift` - Widget grid layout
+- `lifeBoard/UserProfile/Widgets/WidgetView.swift` - Individual widget wrapper
+- `lifeBoard/Navigation/NavigationCoordinator.swift` - Navigation manager
 
 ## 🎯 Immediate Next Steps in Xcode
 
@@ -20,10 +20,10 @@ I've recreated all the missing tvOS app files:
 4. Select **"Add Files to 'lifeBoard'..."**
 5. Navigate to: `/Users/spencergladis/lifeBoard.main/`
 6. Select these folders/files:
-   - `LifeBoard/LifeBoardApp.swift`
-   - `LifeBoard/Platform/` folder
-   - `LifeBoard/UserProfile/` folder
-   - `LifeBoard/Navigation/` folder
+   - `lifeBoard/LifeBoardApp.swift`
+   - `lifeBoard/Platform/` folder
+   - `lifeBoard/UserProfile/` folder
+   - `lifeBoard/Navigation/` folder
 7. **Important Options:**
    - ❌ **"Copy items if needed"** — **UNCHECK** (files are already in the right place)
    - ✅ **"Create groups"** — **CHECK**
@@ -72,7 +72,7 @@ After configuring capabilities, update:
 All files are in: `/Users/spencergladis/lifeBoard.main/`
 
 ```
-LifeBoard/                    ← tvOS app files (just recreated)
+lifeBoard/                    ← tvOS app files (just recreated)
 LifeBoardCore/                ← Framework files
 LifeBoardSecurity/             ← Framework files
 LifeBoardWidgets/              ← Framework files

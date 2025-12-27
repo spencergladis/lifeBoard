@@ -9,7 +9,7 @@ This guide will help you set up the Xcode project and get the prototype running.
 1. **Open Xcode**
 2. **Create New Project**
    - Choose "tvOS" → "App"
-   - Product Name: `LifeBoard`
+   - Product Name: `lifeBoard`
    - Interface: SwiftUI
    - Language: Swift
    - Save location: `/Users/spencergladis/lifeBoard.main/`
@@ -52,12 +52,12 @@ This guide will help you set up the Xcode project and get the prototype running.
 
 ### Add tvOS App Files
 
-1. Select `LifeBoard` target
+1. Select `lifeBoard` target
 2. Add files:
-   - `LifeBoard/LifeBoardApp.swift` (replace default)
-   - `LifeBoard/Platform/Authentication/SignInView.swift`
-   - `LifeBoard/UserProfile/Widgets/` (all files)
-   - `LifeBoard/Navigation/NavigationCoordinator.swift`
+   - `lifeBoard/LifeBoardApp.swift` (replace default)
+   - `lifeBoard/Platform/Authentication/SignInView.swift`
+   - `lifeBoard/UserProfile/Widgets/` (all files)
+   - `lifeBoard/Navigation/NavigationCoordinator.swift`
 
 ### Add iOS App Files
 
@@ -69,7 +69,7 @@ This guide will help you set up the Xcode project and get the prototype running.
 
 ## Step 3: Configure Dependencies
 
-### For LifeBoard (tvOS) Target:
+### For lifeBoard (tvOS) Target:
 - Add `LifeBoardCore` framework
 - Add `LifeBoardSecurity` framework
 - Add `LifeBoardWidgets` framework
@@ -110,14 +110,14 @@ This guide will help you set up the Xcode project and get the prototype running.
 
 ### Sign in with Apple (tvOS Target Only)
 
-1. Select `LifeBoard` target → Signing & Capabilities
+1. Select `lifeBoard` target → Signing & Capabilities
 2. Click "+ Capability"
 3. Add "Sign in with Apple"
 4. Configure in Apple Developer portal
 
 ## Step 5: Configure Info.plist
 
-### For LifeBoard (tvOS) Target:
+### For lifeBoard (tvOS) Target:
 
 Add to `Info.plist`:
 ```xml
@@ -155,7 +155,7 @@ Add to `Info.plist`:
 ## Step 7: Build and Run
 
 1. **Select tvOS Simulator** (Apple TV)
-2. **Select LifeBoard scheme**
+2. **Select lifeBoard scheme**
 3. **Build** (⌘B)
 4. **Run** (⌘R)
 

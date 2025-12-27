@@ -179,12 +179,12 @@
 18. `LifeBoardWidgets/Weather/WeatherWidgetView.swift`
 
 ### tvOS App (6 files)
-19. `LifeBoard/LifeBoardApp.swift`
-20. `LifeBoard/Platform/Authentication/SignInView.swift`
-21. `LifeBoard/UserProfile/Widgets/DashboardView.swift`
-22. `LifeBoard/UserProfile/Widgets/WidgetGrid.swift`
-23. `LifeBoard/UserProfile/Widgets/WidgetView.swift`
-24. `LifeBoard/Navigation/NavigationCoordinator.swift`
+19. `lifeBoard/LifeBoardApp.swift`
+20. `lifeBoard/Platform/Authentication/SignInView.swift`
+21. `lifeBoard/UserProfile/Widgets/DashboardView.swift`
+22. `lifeBoard/UserProfile/Widgets/WidgetGrid.swift`
+23. `lifeBoard/UserProfile/Widgets/WidgetView.swift`
+24. `lifeBoard/Navigation/NavigationCoordinator.swift`
 
 ### iOS App (4 files)
 25. `LifeBoardiOS/LifeBoardiOSApp.swift`

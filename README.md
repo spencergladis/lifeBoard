@@ -80,8 +80,8 @@ lifeBoard.main/
 ### 1. Create Xcode Project
 
 1. Open Xcode
-2. Create new workspace: `LifeBoard.xcworkspace`
-3. Add tvOS target: `LifeBoard`
+2. Create new workspace: `lifeBoard.xcworkspace`
+3. Add tvOS target: `lifeBoard`
 4. Add iOS target: `LifeBoardiOS`
 5. Create shared framework: `LifeBoardCore`
 
@@ -111,7 +111,7 @@ lifeBoard.main/
 
 Add all Swift files to their respective targets:
 - `LifeBoardCore` files → LifeBoardCore framework
-- `lifeBoard` files → LifeBoard (tvOS) target
+- `lifeBoard` files → lifeBoard (tvOS) target
 - `LifeBoardiOS` files → LifeBoardiOS (iOS) target
 - `LifeBoardWidgets` files → Both targets
 

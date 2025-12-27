@@ -21,10 +21,10 @@ All files are verified and ready:
 - [ ] **Step 1.5**: Select **"Add Files to 'lifeBoard'..."**
 - [ ] **Step 1.6**: Navigate to: `/Users/spencergladis/lifeBoard.main/`
 - [ ] **Step 1.7**: Select these items:
-  - `LifeBoard/LifeBoardApp.swift`
-  - `LifeBoard/Platform/` folder
-  - `LifeBoard/UserProfile/` folder
-  - `LifeBoard/Navigation/` folder
+  - `lifeBoard/LifeBoardApp.swift`
+  - `lifeBoard/Platform/` folder
+  - `lifeBoard/UserProfile/` folder
+  - `lifeBoard/Navigation/` folder
 - [ ] **Step 1.8**: In the dialog, set options:
   - ❌ **Uncheck** "Copy items if needed"
   - ✅ **Check** "Create groups"

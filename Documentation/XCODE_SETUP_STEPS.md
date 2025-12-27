@@ -93,13 +93,13 @@
 3. Right-click the **lifeBoard** folder
 4. Select **"Add Files to 'lifeBoard'..."**
 5. Navigate to `/Users/spencergladis/lifeBoard.main/`
-6. **We need to recreate these files** (they were in the old LifeBoard/ directory):
-   - Create `LifeBoard/LifeBoardApp.swift` (main app file)
-   - Create `LifeBoard/Platform/Authentication/SignInView.swift`
-   - Create `LifeBoard/UserProfile/Widgets/DashboardView.swift`
-   - Create `LifeBoard/UserProfile/Widgets/WidgetGrid.swift`
-   - Create `LifeBoard/UserProfile/Widgets/WidgetView.swift`
-   - Create `LifeBoard/Navigation/NavigationCoordinator.swift`
+6. **We need to recreate these files** (they were in the old lifeBoard/ directory):
+   - Create `lifeBoard/LifeBoardApp.swift` (main app file)
+   - Create `lifeBoard/Platform/Authentication/SignInView.swift`
+   - Create `lifeBoard/UserProfile/Widgets/DashboardView.swift`
+   - Create `lifeBoard/UserProfile/Widgets/WidgetGrid.swift`
+   - Create `lifeBoard/UserProfile/Widgets/WidgetView.swift`
+   - Create `lifeBoard/Navigation/NavigationCoordinator.swift`
 
 **Note:** These files need to be recreated. I'll help you with this in the next step.
 

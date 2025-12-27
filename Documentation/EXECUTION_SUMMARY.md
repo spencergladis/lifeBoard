@@ -38,7 +38,7 @@ This file contains a complete step-by-step checklist with checkboxes. Follow it 
    - Delete default `lifeBoard.swift` if it exists
    - Right-click → "Add Files to 'lifeBoard'..."
    - Navigate to `/Users/spencergladis/lifeBoard.main/`
-   - Select: `LifeBoard/LifeBoardApp.swift`, `LifeBoard/Platform/`, `LifeBoard/UserProfile/`, `LifeBoard/Navigation/`
+   - Select: `lifeBoard/LifeBoardApp.swift`, `lifeBoard/Platform/`, `lifeBoard/UserProfile/`, `lifeBoard/Navigation/`
    - Options: Uncheck "Copy items", Check "Create groups", Target: lifeBoard
    - Click Add
 
@@ -58,7 +58,7 @@ This file contains a complete step-by-step checklist with checkboxes. Follow it 
 All files are in: `/Users/spencergladis/lifeBoard.main/`
 
 ```
-LifeBoard/              ← Add to lifeBoard target
+lifeBoard/              ← Add to lifeBoard target
 LifeBoardCore/          ← Add to LifeBoardCore framework
 LifeBoardSecurity/       ← Add to LifeBoardSecurity framework
 LifeBoardWidgets/        ← Add to LifeBoardWidgets framework
