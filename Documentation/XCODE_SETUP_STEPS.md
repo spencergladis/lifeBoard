@@ -219,3 +219,4 @@ private let accessGroup: String? = "group.com.lifeboardapp.lifeBoard"
 - Verify App Groups capability is enabled for both targets
 - Check group identifier matches in code
 
+

@@ -1,6 +1,6 @@
 //
 //  KeychainManager.swift
-//  LifeBoardSecurity
+//  LifeBoardCore
 //
 //  Secure credential storage using Keychain
 //  Supports app group sharing between iOS and tvOS

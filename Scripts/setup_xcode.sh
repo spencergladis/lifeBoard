@@ -18,7 +18,7 @@ echo ""
 
 # Check for required directories
 echo "📁 Checking project structure..."
-directories=("LifeBoard" "LifeBoardCore" "LifeBoardSecurity" "LifeBoardWidgets" "LifeBoardiOS")
+directories=("lifeBoard" "LifeBoardCore" "LifeBoardWidgets" "LifeBoardiOS")
 missing_dirs=()
 
 for dir in "${directories[@]}"; do
@@ -42,12 +42,12 @@ echo "📄 Checking key files..."
 # Check tvOS app files
 echo "  Checking tvOS app files..."
 tvos_files=(
-    "LifeBoard/LifeBoardApp.swift"
-    "LifeBoard/Platform/Authentication/SignInView.swift"
-    "LifeBoard/UserProfile/Widgets/DashboardView.swift"
-    "LifeBoard/UserProfile/Widgets/WidgetGrid.swift"
-    "LifeBoard/UserProfile/Widgets/WidgetView.swift"
-    "LifeBoard/Navigation/NavigationCoordinator.swift"
+    "lifeBoard/LifeBoardApp.swift"
+    "lifeBoard/Platform/Authentication/SignInView.swift"
+    "lifeBoard/UserProfile/Widgets/DashboardView.swift"
+    "lifeBoard/UserProfile/Widgets/WidgetGrid.swift"
+    "lifeBoard/UserProfile/Widgets/WidgetView.swift"
+    "lifeBoard/Navigation/NavigationCoordinator.swift"
 )
 
 missing_files=()
@@ -82,7 +82,7 @@ echo "  Checking framework files..."
 framework_files=(
     "LifeBoardCore/Platform/Display/DesignSystem.swift"
     "LifeBoardCore/CloudKit/CloudKitManager.swift"
-    "LifeBoardSecurity/KeychainManager.swift"
+    "LifeBoardCore/Security/KeychainManager.swift"
     "LifeBoardWidgets/Calendar/CalendarWidget.swift"
     "LifeBoardWidgets/Weather/WeatherWidget.swift"
 )
@@ -113,7 +113,7 @@ else
 fi
 
 # Check App Group identifier
-if grep -q "group.com.lifeboardapp.lifeBoard" "LifeBoardSecurity/KeychainManager.swift"; then
+if grep -q "group.com.lifeboardapp.lifeBoard" "LifeBoardCore/Security/KeychainManager.swift"; then
     echo "  ✅ App Group identifier configured"
 else
     echo "  ⚠️  App Group identifier may need updating"
@@ -128,8 +128,8 @@ echo "  2. Follow XCODE_SETUP_STEPS.md for detailed instructions"
 echo "  3. Or use XCODE_QUICK_REFERENCE.md for quick reference"
 echo ""
 echo "🎯 Quick Start:"
-echo "  - Add tvOS files: LifeBoard/ folder → lifeBoard target"
-echo "  - Create frameworks: LifeBoardCore, LifeBoardSecurity, LifeBoardWidgets"
+echo "  - Add tvOS files: lifeBoard/ folder → lifeBoard target"
+echo "  - Create frameworks: LifeBoardCore, LifeBoardWidgets"
 echo "  - Add framework files to their respective targets"
 echo "  - Create iOS target: LifeBoardiOS"
 echo "  - Configure capabilities: CloudKit, App Groups, Sign in with Apple"

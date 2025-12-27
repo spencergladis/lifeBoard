@@ -15,37 +15,61 @@ lifeBoard is a tvOS Command Center application with an iOS companion app. It pro
 
 ```
 lifeBoard.main/
+├── Documentation/          # Project documentation
+│   ├── BUILD_SUMMARY.md
+│   ├── ENHANCEMENTS.md
+│   ├── EXECUTION_SUMMARY.md
+│   ├── GITHUB_SETUP.md
+│   ├── QUICK_START.md
+│   ├── XCODE_EXECUTION_CHECKLIST.md
+│   ├── XCODE_QUICK_REFERENCE.md
+│   └── XCODE_SETUP_STEPS.md
+├── Scripts/                # Build and setup scripts
+│   └── setup_xcode.sh
 ├── LifeBoardCore/          # Shared framework
 │   ├── Platform/
-│   │   ├── Display/        # DesignSystem, LiquidGlass, AuroraBackground
+│   │   ├── Display/        # DesignSystem, LiquidGlass, AuroraBackground, ThemeManager
 │   │   ├── Authentication/ # AuthenticationManager
 │   │   └── System/         # FocusableCard
 │   ├── UserProfile/
-│   │   ├── Models/         # UserProfile, Widget
+│   │   ├── Models/         # UserProfile, Widget, DashboardLayout
 │   │   ├── Profile/        # ProfileDataManager
-│   │   └── Widgets/        # WidgetProtocol, WidgetProvider
+│   │   └── Widgets/        # WidgetProtocol, WidgetProvider, WidgetManager
 │   ├── CloudKit/           # CloudKitManager
 │   └── Security/           # KeychainManager
-├── LifeBoard/              # tvOS app
+├── lifeBoard/              # tvOS app (lowercase to match Xcode project)
 │   ├── LifeBoardApp.swift
+│   ├── Navigation/
+│   │   └── NavigationCoordinator.swift
 │   ├── Platform/
 │   │   └── Authentication/
 │   │       └── SignInView.swift
-│   └── UserProfile/
-│       └── Widgets/
-│           ├── DashboardView.swift
-│           ├── WidgetGrid.swift
-│           └── WidgetView.swift
+│   ├── UserProfile/
+│   │   └── Widgets/
+│   │       ├── DashboardView.swift
+│   │       ├── WidgetGrid.swift
+│   │       └── WidgetView.swift
+│   ├── lifeBoard.docc/     # Documentation catalog
+│   └── lifeBoard.xcodeproj/
 ├── LifeBoardiOS/           # iOS companion app
 │   ├── LifeBoardiOSApp.swift
-│   └── Configuration/
-│       ├── ConfigurationView.swift
-│       └── WidgetList.swift
+│   ├── Configuration/
+│   │   ├── ConfigurationView.swift
+│   │   └── WidgetList.swift
+│   └── UserProfile/
+│       └── Profile/
+│           └── ProfileSettingsView.swift
 └── LifeBoardWidgets/       # Widget implementations
     ├── Calendar/
     │   ├── CalendarWidget.swift
     │   ├── CalendarWidgetView.swift
     │   └── CalendarWidgetContainer.swift
+    ├── Home/
+    │   ├── HomeWidget.swift
+    │   └── HomeWidgetView.swift
+    ├── Music/
+    │   ├── MusicWidget.swift
+    │   └── MusicWidgetView.swift
     └── Weather/
         ├── WeatherWidget.swift
         └── WeatherWidgetView.swift
@@ -87,9 +111,11 @@ lifeBoard.main/
 
 Add all Swift files to their respective targets:
 - `LifeBoardCore` files → LifeBoardCore framework
-- `LifeBoard` files → LifeBoard (tvOS) target
+- `lifeBoard` files → LifeBoard (tvOS) target
 - `LifeBoardiOS` files → LifeBoardiOS (iOS) target
 - `LifeBoardWidgets` files → Both targets
+
+**Note**: The tvOS app directory is named `lifeBoard` (lowercase) to match the Xcode project structure.
 
 ### 6. Dependencies
 
@@ -153,7 +179,7 @@ To add a new widget:
 ## Notes
 
 - CloudKit container identifier needs to be updated in `CloudKitManager.swift`
-- App group identifier needs to be updated in `KeychainManager.swift`
+- App group identifier needs to be updated in `LifeBoardCore/Security/KeychainManager.swift`
 - Calendar widget requires EventKit permissions
 - Weather widget uses mock data (no API needed for prototype)
 
