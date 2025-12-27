@@ -1,9 +1,9 @@
 //
 //  WidgetView.swift
-//  LifeBoard
+//  lifeBoard
 //
-//  Individual widget wrapper
-//  Uses FocusableCard and LiquidGlassModifier
+//  Individual widget view wrapper
+//  Applies FocusableCard and LiquidGlassModifier
 //
 
 import SwiftUI

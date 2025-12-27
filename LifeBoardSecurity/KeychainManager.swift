@@ -20,9 +20,9 @@ public final class KeychainManager {
     private let appGroup: String
     
     private init() {
-        // Configure app group identifier
-        // Update with your actual app group identifier
-        self.appGroup = "group.com.lifeboard.app"
+        // App group identifier for keychain sharing
+        // Update this to match your App Group from Xcode capabilities
+        self.appGroup = "group.com.lifeboardapp.lifeBoard"
     }
     
     // MARK: - Public Methods

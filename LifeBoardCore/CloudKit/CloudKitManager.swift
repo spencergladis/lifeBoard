@@ -37,8 +37,9 @@ public final class CloudKitManager: ObservableObject {
     }
     
     private init() {
-        // Use Development container for prototype
-        container = CKContainer(identifier: "iCloud.com.lifeboard.app")
+        // CloudKit container identifier
+        // Update this to match your CloudKit container from Xcode capabilities
+        container = CKContainer(identifier: "iCloud.com.lifeboardapp.lifeBoard")
     }
     
     // MARK: - Public Methods

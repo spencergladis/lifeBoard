@@ -1,17 +1,20 @@
 //
 //  DashboardView.swift
-//  LifeBoard
+//  lifeBoard
 //
-//  Main Command Center dashboard
-//  Displays widgets in grid layout with Aurora background
+//  Main dashboard view for tvOS
+//  Displays widgets in a grid layout
 //
 
 import SwiftUI
 
-/// Main dashboard view - Command Center
+/// Main dashboard view
+/// Displays user greeting and widget grid
 public struct DashboardView: View {
     
+    @EnvironmentObject var authManager: AuthenticationManager
     @EnvironmentObject var profileManager: ProfileDataManager
+    @EnvironmentObject var themeManager: ThemeManager
     @StateObject private var widgetManager = WidgetManager.shared
     @State private var isLoading = true
     
@@ -19,27 +22,36 @@ public struct DashboardView: View {
     
     public var body: some View {
         ZStack {
-            // Aurora background
             AuroraBackground()
-                .ignoresSafeArea()
             
-            VStack(spacing: 0) {
+            VStack(alignment: .leading, spacing: 0) {
                 // Status bar
-                StatusBar()
-                    .padding(.top, DesignSystem.Spacing.section)
-                    .padding(.horizontal, DesignSystem.Spacing.section)
-                
-                // Greeting
                 HStack {
-                    Text(greeting)
-                        .font(DesignSystem.Typography.title)
-                        .foregroundColor(DesignSystem.Colors.textPrimary.opacity(0.9))
+                    Text(currentTime)
+                        .font(DesignSystem.Typography.body)
+                        .foregroundColor(DesignSystem.Colors.textPrimary.opacity(0.8))
+                        .shadow(radius: 2)
                     
                     Spacer()
+                    
+                    HStack(spacing: DesignSystem.Spacing.regular) {
+                        Image(systemName: "wifi")
+                        Image(systemName: "person.circle.fill")
+                    }
+                    .font(.system(size: 20))
+                    .foregroundColor(DesignSystem.Colors.textPrimary.opacity(0.8))
+                    .shadow(radius: 2)
                 }
-                .padding(.horizontal, DesignSystem.Spacing.section * 1.6)
-                .padding(.top, DesignSystem.Spacing.large)
-                .padding(.bottom, DesignSystem.Spacing.section)
+                .padding(.horizontal, DesignSystem.Spacing.section)
+                .padding(.top, DesignSystem.Spacing.section)
+                .padding(.bottom, DesignSystem.Spacing.large)
+                
+                // Greeting
+                Text(greeting)
+                    .font(DesignSystem.Typography.title)
+                    .foregroundColor(DesignSystem.Colors.textPrimary.opacity(0.9))
+                    .padding(.horizontal, DesignSystem.Spacing.section)
+                    .padding(.bottom, DesignSystem.Spacing.large)
                 
                 // Widget grid
                 if widgetManager.isLoading || isLoading {
@@ -95,6 +107,12 @@ public struct DashboardView: View {
         return timeOfDay
     }
     
+    private var currentTime: String {
+        let formatter = DateFormatter()
+        formatter.timeStyle = .short
+        return formatter.string(from: Date())
+    }
+    
     // MARK: - Private Methods
     
     private func loadWidgets() async {
@@ -129,47 +147,6 @@ public struct DashboardView: View {
         // Save default widgets
         for widget in defaultWidgets {
             widgetManager.saveWidget(widget) { _ in }
-        }
-    }
-}
-
-// MARK: - Status Bar
-
-private struct StatusBar: View {
-    @State private var currentTime = Date()
-    
-    var body: some View {
-        HStack {
-            Text(timeString)
-                .font(DesignSystem.Typography.secondary)
-                .foregroundColor(DesignSystem.Colors.glass80)
-            
-            Spacer()
-            
-            HStack(spacing: DesignSystem.Spacing.regular) {
-                Image(systemName: "wifi")
-                    .font(.system(size: 20))
-                    .foregroundColor(DesignSystem.Colors.glass80)
-                
-                Image(systemName: "person.circle")
-                    .font(.system(size: 20))
-                    .foregroundColor(DesignSystem.Colors.glass80)
-            }
-        }
-        .onAppear {
-            updateTime()
-        }
-    }
-    
-    private var timeString: String {
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        return formatter.string(from: currentTime)
-    }
-    
-    private func updateTime() {
-        Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { _ in
-            currentTime = Date()
         }
     }
 }

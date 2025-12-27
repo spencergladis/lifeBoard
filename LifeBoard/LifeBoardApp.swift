@@ -1,9 +1,9 @@
 //
 //  LifeBoardApp.swift
-//  LifeBoard
+//  lifeBoard
 //
 //  lifeBoard tvOS app entry point
-//  Command Center application
+//  Command Center for your life
 //
 
 import SwiftUI
@@ -12,51 +12,29 @@ import SwiftUI
 struct LifeBoardApp: App {
     
     @StateObject private var authManager = AuthenticationManager.shared
-    @StateObject private var themeManager = ThemeManager.shared
     @StateObject private var profileManager = ProfileDataManager.shared
+    @StateObject private var cloudKitManager = CloudKitManager.shared
+    @StateObject private var themeManager = ThemeManager.shared
     
     var body: some Scene {
         WindowGroup {
             Group {
                 if authManager.isAuthenticated {
                     DashboardView()
+                        .environmentObject(authManager)
+                        .environmentObject(profileManager)
+                        .environmentObject(cloudKitManager)
+                        .environmentObject(themeManager)
                 } else {
-                    SignInView {
-                        // On sign in success, create profile
-                        Task {
-                            await createUserProfile()
-                        }
-                    }
+                    SignInView()
+                        .environmentObject(authManager)
+                        .environmentObject(profileManager)
+                        .environmentObject(cloudKitManager)
+                        .environmentObject(themeManager)
                 }
             }
-            .environmentObject(themeManager)
-            .environmentObject(authManager)
-            .environmentObject(profileManager)
-        }
-    }
-    
-    // MARK: - Private Methods
-    
-    private func createUserProfile() async {
-        guard let userID = authManager.userIdentifier,
-              let email = authManager.userEmail else {
-            return
-        }
-        
-        let name = authManager.userFullName?.formatted() ?? "User"
-        
-        await MainActor.run {
-            profileManager.createProfile(
-                name: name,
-                email: email,
-                photoURL: nil
-            ) { result in
-                switch result {
-                case .success:
-                    break
-                case .failure(let error):
-                    print("Failed to create profile: \(error)")
-                }
+            .onAppear {
+                authManager.checkAuthenticationStatus()
             }
         }
     }

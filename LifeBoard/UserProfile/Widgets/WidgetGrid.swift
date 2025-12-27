@@ -1,9 +1,9 @@
 //
 //  WidgetGrid.swift
-//  LifeBoard
+//  lifeBoard
 //
-//  Widget grid layout with 3-column system
-//  Uses LazyVGrid with Focus Engine integration
+//  Widget grid container with 3-column layout
+//  Uses LazyVGrid for efficient rendering
 //
 
 import SwiftUI
